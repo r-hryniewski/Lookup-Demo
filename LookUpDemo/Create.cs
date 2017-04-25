@@ -1,4 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace LookUpDemo
@@ -14,17 +15,17 @@ namespace LookUpDemo
         }
 
         [Benchmark]
-        public void CreateDictionary()
+        public Dictionary<int, IEnumerable<string>> CreateDictionary()
         {
-            var x = items
+            return items
                 .GroupBy(i => i.Date.Month)
                 .ToDictionary(g => g.Key, g => g.Select(i => i.Name).AsEnumerable());
         }
 
         [Benchmark]
-        public void CreateLookup()
+        public ILookup<int, string> CreateLookup()
         {
-            var x = items.ToLookup(i => i.Date.Month, i => i.Name);
+            return items.ToLookup(i => i.Date.Month, i => i.Name);
         }
     }
 }
