@@ -23,23 +23,21 @@ namespace LookUpDemo
         [Benchmark]
         public void GetFromArray()
         {
-            var x = items.Where(i => i.Date.Month == 1)
+            var x = items.Where(i => i.Date.Month == 2)
                 .Select(i => i.Name)
                 .ToList();
-            var y = items.Where(i => i.Date.Month == 2).Select(i => i.Name).ToList();
-            var z = items.Where(i => i.Date.Month == 3).Select(i => i.Name).ToList();
         }
 
         [Benchmark]
         public void GetFromDictionary()
         {
-            var y = dict[2].ToList();
+            var x = dict[2].ToList();
         }
 
         [Benchmark]
         public void GetFromLookup()
         {
-            var y = lookup[2].ToList();
+            var x = lookup[2].ToList();
         }
     }
 }
