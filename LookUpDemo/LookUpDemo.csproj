@@ -141,7 +141,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GetValue.cs" />
+    <Compile Include="ForLoop.cs" />
+    <Compile Include="GetAndEnumerateValue.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Create.cs" />
     <Compile Include="Program.cs" />

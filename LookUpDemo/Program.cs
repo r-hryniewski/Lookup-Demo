@@ -6,8 +6,9 @@ namespace LookUpDemo
     {
         static void Main(string[] args)
         {
-            BenchmarkRunner.Run<Create>();
-            BenchmarkRunner.Run<GetValue>();
+            //BenchmarkRunner.Run<Create>();
+            //BenchmarkRunner.Run<GetAndEnumerateValue>();
+            BenchmarkRunner.Run<ForLoop>();
         }
     }
 }
